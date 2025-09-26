@@ -232,6 +232,7 @@ function quiz_init() {
             score++;
             se[7].currentTime = 0;
             se[7].play();
+            showSuccessEffect();
           }
         } else {
           button.classList.add('incorrect');
@@ -307,5 +308,54 @@ function quiz_show() {
   } else {
     box_name.innerText = data[i].name;
   }
+}
+
+// 正解時の視覚的演出
+function showSuccessEffect() {
+  // 背景グラデーション効果
+  document.body.classList.add('correct-background');
+  setTimeout(() => {
+    document.body.classList.remove('correct-background');
+  }, 1500);
+
+  // フラッシュエフェクト
+  const flash = document.createElement('div');
+  flash.className = 'success-flash';
+  document.body.appendChild(flash);
+  setTimeout(() => {
+    document.body.removeChild(flash);
+  }, 500);
+
+  // 紙吹雪エフェクト
+  createConfetti();
+}
+
+// 紙吹雪エフェクトの生成
+function createConfetti() {
+  const confettiContainer = document.createElement('div');
+  confettiContainer.className = 'confetti';
+  document.body.appendChild(confettiContainer);
+
+  // ランダムな数の紙吹雪を生成
+  const confettiCount = Math.floor(Math.random() * 30) + 20;
+
+  for (let i = 0; i < confettiCount; i++) {
+    const confettiPiece = document.createElement('div');
+    confettiPiece.className = 'confetti-piece';
+
+    // ランダムな位置とタイミング
+    confettiPiece.style.left = Math.random() * 100 + '%';
+    confettiPiece.style.animationDelay = Math.random() * 2 + 's';
+    confettiPiece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+    confettiContainer.appendChild(confettiPiece);
+  }
+
+  // 3秒後に紙吹雪を削除
+  setTimeout(() => {
+    if (document.body.contains(confettiContainer)) {
+      document.body.removeChild(confettiContainer);
+    }
+  }, 3000);
 }
 
