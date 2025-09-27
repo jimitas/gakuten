@@ -61,6 +61,7 @@ body {
 @media (max-width: 768px) {
   body {
     padding: 0.25rem;
+    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%);
   }
 
   .container {
@@ -110,6 +111,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  body {
+    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%);
+  }
+
   h1 {
     font-size: 1.25rem !important;
     margin-top: 1rem !important;
