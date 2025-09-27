@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%);
+  background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%) !important;
   font-family: UD Digi Kyokasho NK-B, "ヒラギノ丸ゴ ProN W4", "ヒラギノ角ゴ ProN";
   padding: 0.5rem;
   user-select: none;
@@ -61,7 +61,7 @@ body {
 @media (max-width: 768px) {
   body {
     padding: 0.25rem;
-    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%);
+    /* background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%); */
   }
 
   .container {
@@ -344,26 +344,18 @@ body {
   }
 }
 
-/* ダークモード対応 */
+/* ライトモード強制対応 */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%) !important;
+  }
+}
+
+/* ダークモード対応（コメントアウト） */
+/*
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: #ecf0f1;
   }
-
-  .kigo {
-    background-color: #34495e;
-    color: #ecf0f1;
-    box-shadow: 4px 4px 0 #1a252f;
-  }
-
-  .table {
-    background-color: #34495e;
-    color: #ecf0f1;
-  }
-
-  .card-style {
-    background: #34495e;
-    color: #ecf0f1;
-  }
-}
+*/
