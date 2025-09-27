@@ -61,7 +61,7 @@ body {
 @media (max-width: 768px) {
   body {
     padding: 0.25rem;
-    /* background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%); */
+    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%);
   }
 
   .container {
@@ -344,18 +344,3 @@ body {
   }
 }
 
-/* ライトモード強制対応 */
-@media (prefers-color-scheme: light) {
-  body {
-    background: linear-gradient(135deg, #f6f0cc 0%, #fff8dc 100%) !important;
-  }
-}
-
-/* ダークモード対応（コメントアウト） */
-/*
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: #ecf0f1;
-  }
-*/
